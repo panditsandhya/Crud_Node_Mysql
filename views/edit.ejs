@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node crud operation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>CRUD Operation Using Node</h1>
+    <% users.forEach(user => { %>
+      <form method="POST" action="/update/<%= user.id %>" autocomplete="off">
+        <div class="form-group">
+          <label><b>User name:</b></label>
+          <input type="text" name="name" class="form-control" value="<%= user.name %>">
+        </div>
+        <div class="form-group">
+          <label><b>User email:</b></label>
+          <input type="email" name="email" class="form-control" value="<%= user.email %>">
+        </div>
+        <div class="form-group">
+          <label><b>User password:</b></label>
+          <input type="password" name="password" class="form-control" value="<%= user.password %>">
+        </div><br>
+        <input type="submit" name="update" value="Update" class="btn btn-success">
+      </form>
+      <% }) %>
+  </div>
+</body>
+
+</html>
